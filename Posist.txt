@@ -56,11 +56,12 @@ class Node
     {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		ArrayList<Node> arr=new ArrayList<Node>();
-		do{
+		float val;
+	    	do{
 			System.out.println("Enter Owner ID, Value and Owner Name(-1 -1 -1 to exit):");
 			String inp[]=br.readLine().split(" ");
 			String oID=inp[0];
-			float val=Float.parseFloat(inp[1]);
+			val=Float.parseFloat(inp[1]);
 			String oName=inp[2];
 			if(val>allowedValue)
 				System.out.println("This Value is not allowed");
@@ -109,6 +110,7 @@ class Main
 		genesis.genesis=genesis;
 		
 		//Task 3
+		System.out.println("TASK 3");
 		HashMap<Integer,Node> allNodes=new HashMap<Integer,Node>();
 		allNodes.put(genesis.nodeNum,genesis);
 		int num=0;
@@ -129,6 +131,7 @@ class Main
 		}while(num!=-1);
 		
 		//Task 2 -> Add Children in sets
+		System.out.println("TASK 2");
 		num=0;
 		do
 		{
@@ -148,6 +151,7 @@ class Main
 		}while(num!=-1);
 		  
 		//Displaying the complete tree level by level
+		System.out.println("Printing the tree");
 		Stack<Node> st=new Stack<Node>();
 		st.push(genesis);
 		while(!st.isEmpty())
